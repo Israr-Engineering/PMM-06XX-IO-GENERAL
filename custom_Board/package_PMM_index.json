@@ -2,14 +2,14 @@
   "packages":
   [
     {  
-      "name": "PMM",
+      "name": "PMM-06XX-IO-GENERAL",
       "maintainer": "PMM LLC",
       "websiteURL": "PMM-USA.COM",
       "email" : "info@pmm-usa.us",
       "platforms":
       [
         { 
-          "name": "PMM Boards", 
+          "name": "PMM-06XX-IO-GENERAL", 
           "architecture": "samd",
           "version": "0.0.51",
           "category": "Contributed",
