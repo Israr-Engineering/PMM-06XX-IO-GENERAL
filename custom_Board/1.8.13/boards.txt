@@ -15,54 +15,6 @@
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 
-# PMM0606 (ESI High Speed Data Logger)
-# --------------------------------------
-PMM0606.name=PMM0606 (ESI High Speed Data Logger)
-PMM0606.vid.0=0x2341
-PMM0606.pid.0=0x804d
-PMM0606.vid.1=0x2341
-PMM0606.pid.1=0x004d
-PMM0606.vid.2=0x2341
-PMM0606.pid.2=0x824d
-PMM0606.vid.3=0x2341
-PMM0606.pid.3=0x024d
-PMM0606.upload_port.0.vid=0x2341
-PMM0606.upload_port.0.pid=0x804d
-PMM0606.upload_port.1.vid=0x2341
-PMM0606.upload_port.1.pid=0x004d
-PMM0606.upload_port.2.vid=0x2341
-PMM0606.upload_port.2.pid=0x824d
-PMM0606.upload_port.3.vid=0x2341
-PMM0606.upload_port.3.pid=0x024d
-PMM0606.upload_port.4.board=arduino_zero_native
-PMM0606.build.usb_product="PMM0606"
-PMM0606.upload.tool=bossac
-PMM0606.upload.tool.default=bossac
-PMM0606.upload.tool.network=arduino_ota
-PMM0606.upload.protocol=sam-ba
-PMM0606.upload.maximum_size=262144
-PMM0606.upload.maximum_data_size=32768
-PMM0606.upload.use_1200bps_touch=true
-PMM0606.upload.wait_for_upload_port=true
-PMM0606.upload.native_usb=true
-PMM0606.build.mcu=cortex-m0plus
-PMM0606.build.f_cpu=48000000L
-PMM0606.build.usb_product="pmm0606"
-PMM0606.build.usb_manufacturer="PMM LLC"
-PMM0606.build.board=pmm0606
-PMM0606.build.core=arduino
-PMM0606.build.extra_flags=-D__SAMD21G18A__ {build.usb_flags}
-PMM0606.build.ldscript=linker_scripts/gcc/flash_with_bootloader.ld
-PMM0606.build.openocdscript=openocd_scripts/arduino_zero.cfg
-PMM0606.build.variant=pmm0606
-PMM0606.build.variant_system_lib=
-PMM0606.build.vid=0x2341
-PMM0606.build.pid=0x804d
-PMM0606.bootloader.tool=openocd
-PMM0606.bootloader.tool.default=openocd
-PMM0606.bootloader.file=zero/samd21_sam_ba.bin
-
-
 # pmm0620 (ESI 12x Digital Inputs)
 # --------------------------------------
 pmm0620.name=pmm0620(ESI 12x Digital Inputs)
