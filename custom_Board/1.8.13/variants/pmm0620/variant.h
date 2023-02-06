@@ -127,7 +127,7 @@ extern "C" unsigned int PINCOUNT_fn();
 
  //* Analog pins (not defined for PMM0620)
  
-#define PIN_A0               (14ul)
+//#define PIN_A0               (14ul)
 #define PIN_A1               (15ul)
 #define PIN_A2               (16ul)
 #define PIN_A3               (17ul)
