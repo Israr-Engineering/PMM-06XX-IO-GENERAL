@@ -143,34 +143,14 @@ extern "C" unsigned int PINCOUNT_fn();
 #define PIN_DAC0             (14ul)
 
 
-
-static const uint8_t A0  = PIN_A0;
-static const uint8_t A1  = PIN_A1;
-static const uint8_t A2  = PIN_A2;
-static const uint8_t A3  = PIN_A3;
-static const uint8_t A4  = PIN_A4;
-static const uint8_t A5  = PIN_A5;
-
-static const uint8_t A6  = PIN_A6;
-static const uint8_t A7  = PIN_A7;
-static const uint8_t A8  = PIN_A8;
-static const uint8_t A9  = PIN_A9;
-
-
-
-
-static const uint8_t DI1= PMM_DI_01  ;
-static const uint8_t DI2= PMM_DI_02  ;
-static const uint8_t DI3= PMM_DI_03  ;
-static const uint8_t DI4= PMM_DI_04  ;
-static const uint8_t DI5= PMM_DI_05  ;
-static const uint8_t DI6= PMM_DI_06  ;
-static const uint8_t DI7= PMM_DI_07  ;
-static const uint8_t DI8= PMM_DI_08  ;
-static const uint8_t DI9= PMM_DI_09  ;
-static const uint8_t DI10= PMM_DI_10  ;
-static const uint8_t DI11= PMM_DI_11  ;
-static const uint8_t DI12= PMM_DI_12  ;
+static const uint8_t DO1= PMM_DO_01  ;
+static const uint8_t DO2= PMM_DO_02  ;
+static const uint8_t DO3= PMM_DO_03  ;
+static const uint8_t DO4= PMM_DO_04  ;
+static const uint8_t DO5= PMM_DO_05  ;
+static const uint8_t DO6= PMM_DO_06  ;
+static const uint8_t DO7= PMM_DO_07  ;
+static const uint8_t DO8= PMM_DO_08  ;
 
 
 static const uint8_t DAC0 = PIN_DAC0;

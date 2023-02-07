@@ -164,14 +164,14 @@ extern "C" unsigned int PINCOUNT_fn();
 
 
 
-static const uint8_t A1  = PMM_AO_01;
-static const uint8_t A2  = PMM_AO_02;
-static const uint8_t A3  = PMM_AO_03;
-static const uint8_t A4  = PMM_AO_04;
-static const uint8_t A1  = PMM_AI_01;
-static const uint8_t A2  = PMM_AI_02;
-static const uint8_t A3  = PMM_AI_03;
-static const uint8_t A4  = PMM_AI_04;
+static const uint8_t AO1  = PMM_AO_01;
+static const uint8_t AO2  = PMM_AO_02;
+static const uint8_t AO3  = PMM_AO_03;
+static const uint8_t AO4  = PMM_AO_04;
+static const uint8_t AI1  = PMM_AI_01;
+static const uint8_t AI2  = PMM_AI_02;
+static const uint8_t AI3  = PMM_AI_03;
+static const uint8_t AI4  = PMM_AI_04;
 
 
 

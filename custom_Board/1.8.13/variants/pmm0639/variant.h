@@ -97,7 +97,7 @@ extern "C" unsigned int PINCOUNT_fn();
 #define PMM_DI_01          (9u) //PA11 : Digital Input 01
 #define PMM_DI_02          (8u) //PA10 : Digital Input 02
 #define PMM_DO_01          (7u) //PA09 : Digital Input 01
-#define PMM_DO_01          (6u) //PA08 : Digital Input 02
+#define PMM_DO_02          (6u) //PA08 : Digital Input 02
 #define PMM_DI_LossOfPower (10u)//PA13 : Digital Input :loos of power 
 //03b. Flash memory
 #define PMM_DO_FLASH_CS    (11u)//PA20 : Digital output : Flash chip select command 
@@ -165,15 +165,15 @@ extern "C" unsigned int PINCOUNT_fn();
 
 
 
-static const uint8_t AO1  = PMM_AI_01;
-static const uint8_t AO2  = PMM_AI_02;
-static const uint8_t AI1  = PMM_AO_01;
-static const uint8_t AI2  = PMM_AO_02;
+static const uint8_t AI1  = PMM_AI_01;
+static const uint8_t AI2  = PMM_AI_02;
+static const uint8_t AO1  = PMM_AO_01;
+static const uint8_t AO2  = PMM_AO_02;
 
 static const uint8_t DI1  = PMM_DI_01;
 static const uint8_t DI2  = PMM_DI_02;
 static const uint8_t DO1  = PMM_DO_01;
-static const uint8_t AO2  = PMM_DO_02;
+static const uint8_t DO2  = PMM_DO_02;
 
 
 
