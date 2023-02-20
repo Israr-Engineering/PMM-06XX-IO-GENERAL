@@ -89,14 +89,14 @@ extern "C" unsigned int PINCOUNT_fn();
  * Digital pins for PMM0620
  */
 //01. Digital inputs on screw terminal 
-#define PMM_DO0          (10u) //PA06 : Digital OUTPUT 01
-#define PMM_DO1          (11u) //PA07 : Digital OUTPUT 02
-#define PMM_DO2          (8u) //PA10 : Digital OUTPUT 03
-#define PMM_DO3          (7u) //PA09: Digital OUTPUT 04
-#define PMM_DO4          (2u) //PB08 : Digital OUTPUT 05
-#define PMM_DO5          (3u) //PB09 : Digital OUTPUT 06
-#define PMM_DO6          (4u) //PA04 : Digital OUTPUT 07
-#define PMM_DO7          (5u) //PA05 : Digital OUTPUT 08
+#define PMM_DO0          (7u) //PA09: Digital OUTPUT 04
+#define PMM_DO1          (8u) //PA10 : Digital OUTPUT 03
+#define PMM_DO2          (11u) //PA07 : Digital OUTPUT 02
+#define PMM_DO3          (10u) //PA06 : Digital OUTPUT 01
+#define PMM_DO4          (5u) //PA05 : Digital OUTPUT 08
+#define PMM_DO5          (4u) //PA04 : Digital OUTPUT 07
+#define PMM_DO6          (3u) //PB09 : Digital OUTPUT 06
+#define PMM_DO7          (2u) //PB08 : Digital OUTPUT 05
 #define PMM_DO_ERROR     (16u)//PB03 : 
 #define PMM_DO_DRDY      (15u)//PB02 :
 #define PMM_DI_INTN      (13u)//PA20 :
