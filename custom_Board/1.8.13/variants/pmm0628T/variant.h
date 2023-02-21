@@ -158,7 +158,7 @@ extern "C" unsigned int PINCOUNT_fn();
 
 // Edit Mohannad
 
-static const uint8_t PMM_DO_Pins[8] = {PMM_DI0,PMM_DI1,PMM_DI2,PMM_DI3,PMM_DI4,PMM_DI5,PMM_DI6,PMM_DI7};
+static const uint8_t PMM_DI_Pins[8] = {PMM_DI0,PMM_DI1,PMM_DI2,PMM_DI3,PMM_DI4,PMM_DI5,PMM_DI6,PMM_DI7};
 
 static const uint8_t PMM_DO_Pins[4] = {PMM_DO0,PMM_DO1,PMM_DO2,PMM_DO3};
 

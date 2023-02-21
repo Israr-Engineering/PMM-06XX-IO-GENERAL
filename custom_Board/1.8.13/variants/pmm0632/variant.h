@@ -89,14 +89,14 @@ extern "C" unsigned int PINCOUNT_fn();
  * Digital pins for PMM0632
  */
 //01. Analog inputs on screw terminal 
-#define PMM_AI_01          (2u) //PB08 : Analog Input 01
-#define PMM_AI_02          (3u) //PB09 : Analog Input 02
-#define PMM_AI_03          (4u) //PA04 : Analog Input 03
-#define PMM_AI_04          (5u) //PA05 : Analog Input 04
-#define PMM_AI_05          (6u) //PA08 : Analog Input 05
-#define PMM_AI_06          (7u) //PA09 : Analog Input 06
-#define PMM_AI_07          (8u) //PA10 : Analog Input 07
-#define PMM_AI_08          (9u) //PA11 : Analog Input 08
+#define PMM_AI0          (2u) //PB08 : Analog Input 01
+#define PMM_AI1          (3u) //PB09 : Analog Input 02
+#define PMM_AI2          (4u) //PA04 : Analog Input 03
+#define PMM_AI3          (5u) //PA05 : Analog Input 04
+#define PMM_AI4          (6u) //PA08 : Analog Input 05
+#define PMM_AI5          (7u) //PA09 : Analog Input 06
+#define PMM_AI6          (8u) //PA10 : Analog Input 07
+#define PMM_AI7          (9u) //PA11 : Analog Input 08
 #define PMM_DI_PROG        (25u) //PA02 : Digital Input for programming mode - near termination dip switch
 #define PMM_Vref           (46u) //PA03
 //03a. Ethernet controller
@@ -113,34 +113,11 @@ extern "C" unsigned int PINCOUNT_fn();
 //03c. Serial RS485
 #define PMM_DO_RDENA        (31u)//PA27 : Digital output : RS485 Direction control  
 
-
-
-
-
-#define PMM_READY          (0u) //PA05
-#define PMM_DRDY           (1u) //PA06
-#define PMM_SER            (3u) //PA08
-#define PMM_RCLK           (4u) //PA09
-#define PMM_SRCLK          (5u) //PA10
-#define PMM_SRCLR#         (6u) //PA11
-#define PMM_Error          (11u) //PB03
-//02. Dip switches 
-#define PMM_DI_PROG01      (29u) //PA27 : Digital Input - general (front panel dip switch )
-#define PMM_DI_PROG02      (44u) //PA03 : Digital Input - general (front panel dip switch)
-//03c. Serial RS485
-#define PMM_DO_RDENA        (13u)//PA14 : Digital output : RS485 Direction control  
-
-#define PMM_S0         (8u) //PA20
-#define PMM_S1         (9u) //PA21
-#define PMM_S2         (22u) //PB09
-#define PMM_AI_WIZRST       (21u) //PA19 :
-#define PMM_AI_INTN         (11u)//PA20 :
-//03. Internal signals
-
-
-
-//03d. options 
-#define PMM_DI_INT        (34u)//PA15 : Digital Input : General interrupt from RTC or Extension boards  
+// //02. Dip switches 
+// #define PMM_DI_PROG01      (29u) //PA27 : Digital Input - general (front panel dip switch )
+// #define PMM_DI_PROG02      (44u) //PA03 : Digital Input - general (front panel dip switch)
+// //03d. options 
+// #define PMM_DI_INT        (34u)//PA15 : Digital Input : General interrupt from RTC or Extension boards  
 
 
 
@@ -162,20 +139,23 @@ extern "C" unsigned int PINCOUNT_fn();
 #define PIN_A9               (0ul)
 
 
-#define PIN_DAC0             (14ul)
+//#define PIN_DAC0             (14ul)
 
 
 
-static const uint8_t A1  = PMM_AI_01;
-static const uint8_t A2  = PMM_AI_02;
-static const uint8_t A3  = PMM_AI_03;
-static const uint8_t A4  = PMM_AI_04;
-static const uint8_t A5  = PMM_AI_05;
-static const uint8_t A6  = PMM_AI_06;
-static const uint8_t A7  = PMM_AI_07;
-static const uint8_t A8  = PMM_AI_08;
+// static const uint8_t A0  = PMM_AI0;
+// static const uint8_t A1  = PMM_AI1;
+// static const uint8_t A2  = PMM_AI2;
+// static const uint8_t A3  = PMM_AI3;
+// static const uint8_t A4  = PMM_AI4;
+// static const uint8_t A5  = PMM_AI5;
+// static const uint8_t A6  = PMM_AI6;
+// static const uint8_t A7  = PMM_AI7;
 
 
+
+// Edit Mohannad
+static const uint8_t PMM_AI_Pins[8] = {PMM_AI0,PMM_AI1,PMM_AI2,PMM_AI3,PMM_AI4,PMM_AI5,PMM_AI6,PMM_AI7};
 
 
 
@@ -189,7 +169,7 @@ static const uint8_t A8  = PMM_AI_08;
 // static const uint8_t DO8= PMM_DI_08  ;
 
 
-static const uint8_t DAC0 = PIN_DAC0;
+//static const uint8_t DAC0 = PIN_DAC0;
 #define ADC_RESOLUTION		12
 
 // Other pins

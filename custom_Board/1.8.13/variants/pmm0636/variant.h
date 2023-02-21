@@ -89,10 +89,10 @@ extern "C" unsigned int PINCOUNT_fn();
  * Digital pins for PMM0635
  */
 //01. Analog outputs on screw terminal 
-#define PMM_AO_01          (4u) //PA07 : Analog Output 01
-#define PMM_AO_02          (3u) //PA06 : Analog Output 02
-#define PMM_AO_03          (2u) //PA05 : Analog Output 03
-#define PMM_AO_04          (25u) //PA04 : Analog Output 04
+#define PMM_AO0          (4u) //PA07 : Analog Output 01
+#define PMM_AO1          (3u) //PA06 : Analog Output 02
+#define PMM_AO2          (2u) //PA05 : Analog Output 03
+#define PMM_AO3          (25u) //PA04 : Analog Output 04
 #define PMM_DI_LossOfPower (15u)//PA14 : Digital Input :loos of power 
 //03b. Flash memory
 #define PMM_DO_FLASH_CS    (10u)//PA20 : Digital output : Flash chip select command 
@@ -116,31 +116,6 @@ extern "C" unsigned int PINCOUNT_fn();
 
 
 
-
-
-#define PMM_CS             (25u) //PA04
-#define PMM_READY          (2u) //PA05
-#define PMM_DRDY           (3u) //PA06
-#define PMM_SER            (5u) //PA08
-#define PMM_RCLK           (6u) //PA09
-#define PMM_SRCLK          (7u) //PA10
-#define PMM_SRCLR#         (8u) //PA11
-#define PMM_Error          (13u) //PB03
-//03c. Serial RS485
-#define PMM_DO_RDENA        (13u)//PA14 : Digital output : RS485 Direction control  
-
-#define PMM_S0         (8u) //PA20
-#define PMM_S1         (9u) //PA21
-#define PMM_S2         (22u) //PB09
-
-#define PMM_AI_WIZRST       (21u) //PA19 :
-#define PMM_AI_INTN         (11u)//PA20 :
-//03. Internal signals
-
-//03d. options 
-#define PMM_DI_INT        (34u)//PA15 : Digital Input : General interrupt from RTC or Extension boards  
-
-
  //* Analog pins (not defined for PMM0635)
  
 #define PIN_A0               (14ul)
@@ -156,15 +131,18 @@ extern "C" unsigned int PINCOUNT_fn();
 #define PIN_A9               (0ul)
 
 
-#define PIN_DAC0             (14ul)
+//#define PIN_DAC0             (14ul)
 
 
 
-static const uint8_t A1  = PMM_AO_01;
-static const uint8_t A2  = PMM_AO_02;
-static const uint8_t A3  = PMM_AO_03;
-static const uint8_t A4  = PMM_AO_04;
+// static const uint8_t A1  = PMM_AO_01;
+// static const uint8_t A2  = PMM_AO_02;
+// static const uint8_t A3  = PMM_AO_03;
+// static const uint8_t A4  = PMM_AO_04;
 
+
+// Edit Mohannad
+static const uint8_t PMM_AO_Pins[4] = {PMM_AO0,PMM_AO1,PMM_AO2,PMM_AO3};
 
 
 
@@ -178,7 +156,7 @@ static const uint8_t A4  = PMM_AO_04;
 // static const uint8_t DO8= PMM_DI_08  ;
 
 
-static const uint8_t DAC0 = PIN_DAC0;
+//static const uint8_t DAC0 = PIN_DAC0;
 #define ADC_RESOLUTION		12
 
 // Other pins

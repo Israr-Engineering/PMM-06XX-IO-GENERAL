@@ -89,14 +89,14 @@ extern "C" unsigned int PINCOUNT_fn();
  * Digital pins for PMM0630
  */
 //01. Analog inputs on screw terminal 
-#define PMM_AI_01          (5u) //PA08 : Analog Input 01
-#define PMM_AI_02          (7u) //PA10 : Analog Input 02
-#define PMM_AI_03          (8u) //PA11 : Analog Input 03
-#define PMM_AI_04          (6u) //PA09 : Analog Input 04
-#define PMM_AI_05          (9u) //PA13 : Analog Input 05
-#define PMM_AI_06          (3u) //PA06 : Analog Input 06
-#define PMM_AI_07          (4u) //PA07 : Analog Input 07
-#define PMM_AI_08          (2u) //PA05 : Analog Input 08
+#define PMM_AI0          (5u) //PA08 : Analog Input 01
+#define PMM_AI1          (2u) //PA05 : Analog Input 08
+#define PMM_AI2          (4u) //PA07 : Analog Input 07
+#define PMM_AI3          (3u) //PA06 : Analog Input 06
+#define PMM_AI4          (9u) //PA13 : Analog Input 05
+#define PMM_AI5          (6u) //PA09 : Analog Input 04
+#define PMM_AI6          (8u) //PA11 : Analog Input 03
+#define PMM_AI7          (7u) //PA10 : Analog Input 02
 //03a. Ethernet controller
 #define PMM_DO_ETH_RST     (12u) //PB02 : Digital output : Ethernet controller reset command
 #define PMM_D1_ETH_INT     (13u) //PB03 : Digital Input : Ethernet controller interrupt 
@@ -142,24 +142,23 @@ extern "C" unsigned int PINCOUNT_fn();
 #define PIN_A9               (0ul)
 
 
-#define PIN_DAC0             (14ul)
+//#define PIN_DAC0             (14ul)
 
 
-static const uint8_t A1  = PMM_AI_01;
-static const uint8_t A2  = PMM_AI_02;
-static const uint8_t A3  = PMM_AI_03;
-static const uint8_t A4  = PMM_AI_04;
-static const uint8_t A5  = PMM_AI_05;
-static const uint8_t A6  = PMM_AI_06;
-static const uint8_t A7  = PMM_AI_07;
-static const uint8_t A8  = PMM_AI_08;
+// static const uint8_t A0  = PMM_AI0;
+// static const uint8_t A1  = PMM_AI1;
+// static const uint8_t A2  = PMM_AI2;
+// static const uint8_t A3  = PMM_AI3;
+// static const uint8_t A4  = PMM_AI4;
+// static const uint8_t A5  = PMM_AI5;
+// static const uint8_t A6  = PMM_AI6;
+// static const uint8_t A7  = PMM_AI7;
+
+// Edit Mohannad
+static const uint8_t PMM_AI_Pins[8] = {PMM_AI0,PMM_AI1,PMM_AI2,PMM_AI3,PMM_AI4,PMM_AI5,PMM_AI6,PMM_AI7};
 
 
-
-
-
-
-static const uint8_t DAC0 = PIN_DAC0;
+//static const uint8_t DAC0 = PIN_DAC0;
 #define ADC_RESOLUTION		12
 
 // Other pins
