@@ -1,14 +1,14 @@
 #include "../Commons/ProjectDef.h"
 #ifdef PMMModbusRTUServer
 
+extern void PMMModBUSRTUServerSetup(int16_t SlaveID, uint16_t Config, int16_t BaudRate, int16_t TXPin, int16_t RXPin, int16_t SerialSelectionPin, int8_t SerialPortNumber = 1);
 
-extern void PMMModBUSRTUServerSetup(int16_t SlaveID, uint16_t Config, int16_t BaudRate, int16_t TXPin,
-                                    int16_t RXPin, int16_t SerialSelectionPin, int8_t SerialPortNumber =1);
-
-extern void PMMModBUSRTUServerconfigure(bool Coils, int16_t CoilsStartAddress, int16_t CoilsQauntity,
-                                        bool InputRegisters, int16_t InputRegistersStartAddress, int16_t InputRegistersQauntity,
-                                        bool HoldingRegisters, int16_t HoldingRegistersStartAddress, int16_t HoldingRegistersQauntity,
-                                        bool DiscreteInputs, int16_t DiscreteInputsStartAddress, int16_t DiscreteInputsQauntity);
+extern void PMMModBUSRTUServerconfigure(
+    bool Coils, int16_t CoilsStartAddress, int16_t CoilsQauntity,
+    bool InputRegisters, int16_t InputRegistersStartAddress, int16_t InputRegistersQauntity,
+    bool HoldingRegisters, int16_t HoldingRegistersStartAddress, int16_t HoldingRegistersQauntity,
+    bool DiscreteInputs, int16_t DiscreteInputsStartAddress, int16_t DiscreteInputsQauntity
+);
 
 extern int PMMModBUSRTUServercoilRead(int address);
 extern int PMMModBUSRTUServerdiscreteInputRead(int address);
@@ -19,22 +19,22 @@ extern void PMMModBUSRTUServerdiscreteInputWrite(int address, uint8_t value);
 extern void PMMModBUSRTUServerholdingRegisterWrite(int address, uint16_t value);
 extern void PMMModBUSRTUServerinputRegisterWrite(int address, uint16_t value);
 
-void PMMModBUSRTUServerSetup(int16_t SlaveID, uint16_t Config, int16_t BaudRate, int16_t TXPin,
-                             int16_t RXPin, int16_t SerialSelectionPin, int8_t SerialPort)
+void PMMModBUSRTUServerSetup(int16_t SlaveID, uint16_t Config, int16_t BaudRate, int16_t TXPin, int16_t RXPin, int16_t SerialSelectionPin, int8_t SerialPort)
 {
-    if(SerialPort==1)
-    RS485.setSerial(&Serial);
-    else if (SerialPort==2)
-    RS485.setSerial(&Serial1);
-   
+    if (SerialPort == 1)
+        RS485.setSerial(&Serial);
+    else if (SerialPort == 2)
+        RS485.setSerial(&Serial1);
+
     RS485.setPins(TXPin, SerialSelectionPin, RXPin);
     ModbusRTUServer.begin(SlaveID, BaudRate, Config);
 }
 
-void PMMModBUSRTUServerconfigure(bool Coils, int16_t CoilsStartAddress, int16_t CoilsQauntity,
-                                 bool InputRegisters, int16_t InputRegistersStartAddress, int16_t InputRegistersQauntity,
-                                 bool HoldingRegisters, int16_t HoldingRegistersStartAddress, int16_t HoldingRegistersQauntity,
-                                 bool DiscreteInputs, int16_t DiscreteInputsStartAddress, int16_t DiscreteInputsQauntity)
+void PMMModBUSRTUServerconfigure(
+    bool Coils, int16_t CoilsStartAddress, int16_t CoilsQauntity,
+    bool InputRegisters, int16_t InputRegistersStartAddress, int16_t InputRegistersQauntity,
+    bool HoldingRegisters, int16_t HoldingRegistersStartAddress, int16_t HoldingRegistersQauntity,
+    bool DiscreteInputs, int16_t DiscreteInputsStartAddress, int16_t DiscreteInputsQauntity)
 {
 
     if (Coils)
@@ -53,7 +53,6 @@ void PMMModBUSRTUServerconfigure(bool Coils, int16_t CoilsStartAddress, int16_t 
     {
         ModbusRTUServer.configureDiscreteInputs(DiscreteInputsStartAddress, DiscreteInputsQauntity);
     }
-    
 }
 
 int PMMModBUSRTUServercoilRead(int address)
@@ -76,7 +75,7 @@ long PMMModBUSRTUServerholdingRegisterRead(int address)
 {
     long value;
     ModbusRTUServer.poll();
-    value =ModbusRTUServer.holdingRegisterRead(address);
+    value = ModbusRTUServer.holdingRegisterRead(address);
     return value;
 }
 
