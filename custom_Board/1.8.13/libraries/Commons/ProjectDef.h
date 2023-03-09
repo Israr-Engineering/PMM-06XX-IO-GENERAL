@@ -25,6 +25,8 @@
  #include <RTCZero.h>
 #include <ArduinoRS485.h>
 #include <ArduinoModbus.h>
+#include <Modbus.h>
+#include <ModbusSerial.h>
 // #include <EthernetUdp.h>
 // #include <PID_v1.h>
 // #include <EEPROM.h>
@@ -56,17 +58,17 @@ using std::char_traits;
 #define PMMInternalRTC
 // ModbusRTUServer
 #define PMMModbusRTUServer
+// ModbusLightRTUServer
+#define PMMModbusLightRTUServer
 // ModbusRTUClient
 #define PMMModbusRTUClient
 // ModbusTCPServer
 #define PMMModbusTCPServer
-// // Sun Calculations
+// Sun Calculations
 #define PMMSunCalculations
-// // EEPROM
+// EEPROM
 #define PMMEEPROM
- // EPROM
-// #define PMMEPROM
-// // Flash Memory
+// Flash Memory
 #define PMMFlashMemory
 // UDP
 #define PMMUDP
@@ -75,8 +77,9 @@ using std::char_traits;
 // BNO
 #define PMMBNO
 
-//ModBusRTUClient
-#define PMMModBUSRTUServer
+//I2C 
+#define PMMI2C
+
 
 #pragma endregion
 

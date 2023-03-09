@@ -15,49 +15,47 @@ extern int16_t PMMInternalRTCGetSeconds();
 
 void PMMInternalRTCSetup()
 {
-    rtc.begin();
+    PMMRTC.begin();
 }
 
 void PMMInternalRTCSetUnixTime(int32_t UnixTime, float TimeZone)
 {
-rtc.setEpoch(UnixTime+(3600*TimeZone)); 
+    PMMRTC.setEpoch(UnixTime + (3600 * TimeZone));
 }
 
 uint32_t PMMInternalRTCGetUnixTime()
 {
-    return rtc.getEpoch();
+    return PMMRTC.getEpoch();
 }
 
 int16_t PMMInternalRTCGetDay()
 {
-return rtc.getDay();
+    return PMMRTC.getDay();
 }
 
 int16_t PMMInternalRTCGetMonth()
 {
-return rtc.getMonth();
+    return PMMRTC.getMonth();
 }
 
 int16_t PMMInternalRTCGetYear()
 {
-return rtc.getYear()+2000;
+    return PMMRTC.getYear() + 2000;
 }
 
 int16_t PMMInternalRTCGetHours()
 {
-return rtc.getHours();
+    return PMMRTC.getHours();
 }
 
 int16_t PMMInternalRTCGetMinutes()
 {
-return rtc.getMinutes();
+    return PMMRTC.getMinutes();
 }
 
 int16_t PMMInternalRTCGetSeconds()
 {
-return rtc.getSeconds();
+    return PMMRTC.getSeconds();
 }
-
-
 
 #endif
