@@ -31,10 +31,10 @@
 #include <PID_v1.h>
 //#include <EEPROM.h>
 #include <SparkFun_SPI_SerialFlash.h>
-#include <HTTPRequest-master/include/HTTPRequest.h>
-#include <I2Cdevlib-MPU6050/MPU6050_6Axis_MotionApps612.h>
-#include <Adafruit BNO055/Adafruit_BNO055.h>
-#include <Adafruit BNO055/utility/imumaths.h>
+#include <HTTPRequest.h>
+#include <MPU6050_6Axis_MotionApps612.h>
+#include <Adafruit_BNO055.h>
+#include <imumaths.h>
 
 // 02. Using
 using namespace std;
