@@ -16,25 +16,25 @@
 #include <random>
 // #include <api>
 // #include <boost/date_time/gregorian/gregorian.hpp>
-//#include <Scheduler.h>
+#include <Scheduler.h>
 #include <Wire.h>
 #include <SparkFun_External_EEPROM.h>
 #include <SPI.h>
 #include <Ethernet.h>
-//#include <DS3231.h>
- #include <RTCZero.h>
+#include <DS3231.h>
+#include <RTCZero.h>
 #include <ArduinoRS485.h>
 #include <ArduinoModbus.h>
 #include <Modbus.h>
 #include <ModbusSerial.h>
-// #include <EthernetUdp.h>
-// #include <PID_v1.h>
-// #include <EEPROM.h>
- #include <SparkFun SPI SerialFlash Arduino Library/src/SparkFun_SPI_SerialFlash.h>
-// #include <HTTPRequest-master/include/HTTPRequest.h>
-// #include <I2Cdevlib-MPU6050/MPU6050_6Axis_MotionApps612.h>
-// #include <Adafruit BNO055/Adafruit_BNO055.h>
-// #include <Adafruit BNO055/utility/imumaths.h>
+#include <EthernetUdp.h>
+#include <PID_v1.h>
+#include <EEPROM.h>
+#include <SparkFun_SPI_SerialFlash_Arduino_Library/src/SparkFun_SPI_SerialFlash.h>
+#include <HTTPRequest-master/include/HTTPRequest.h>
+#include <I2Cdevlib-MPU6050/MPU6050_6Axis_MotionApps612.h>
+#include <Adafruit BNO055/Adafruit_BNO055.h>
+#include <Adafruit BNO055/utility/imumaths.h>
 
 // 02. Using
 using namespace std;
