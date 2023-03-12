@@ -30,7 +30,7 @@
 #include <EthernetUdp.h>
 #include <PID_v1.h>
 #include <EEPROM.h>
-#include <SparkFun_SPI_SerialFlash_Arduino_Library/src/SparkFun_SPI_SerialFlash.h>
+#include <SparkFun_SPI_SerialFlash.h>
 #include <HTTPRequest-master/include/HTTPRequest.h>
 #include <I2Cdevlib-MPU6050/MPU6050_6Axis_MotionApps612.h>
 #include <Adafruit BNO055/Adafruit_BNO055.h>
