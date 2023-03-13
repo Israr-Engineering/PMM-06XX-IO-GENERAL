@@ -4,6 +4,8 @@
 
 #include "PMMTypes.h"
 
+ExternalEEPROM PMMEprom;
+
 struct PmmPLC PMMPLC;
 struct PmmModBus PMMMODBUS;
 struct PmmTCPUDP PMMTCPUDP;

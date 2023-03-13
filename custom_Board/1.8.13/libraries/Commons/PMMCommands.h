@@ -47,23 +47,23 @@ string PMMCommnads(string readData)
     {
         result = PMMIsAlive();
     }
-    else if (readData == "RTC")
-    {
-        DateTime RTCNow = PMMGetRTCNOW();
-        result = DateTimeToString(RTCNow.year(), RTCNow.month(), RTCNow.day(), RTCNow.hour(), RTCNow.minute(), RTCNow.second());
-    }
-    else if (readData == "RTCUNIX")
-    {
-        result = ConvertUint32_tTostring(PMMGetRTCUNIXTime());
-    }
-    else if (readData == "SetRTCUNIX")
-    {
-        PMMSetRTCUNIXTime(GetUnixDateTimeNow());
-    }
-    else if (readData == "CheckHardware")
-    {
-        CheckAvailabeHardware();
-    }
+    // else if (readData == "RTC")
+    // {
+    //     DateTime RTCNow = PMMGetRTCNOW();
+    //     result = DateTimeToString(RTCNow.year(), RTCNow.month(), RTCNow.day(), RTCNow.hour(), RTCNow.minute(), RTCNow.second());
+    // }
+    // else if (readData == "RTCUNIX")
+    // {
+    //     result = ConvertUint32_tTostring(PMMGetRTCUNIXTime());
+    // }
+    // else if (readData == "SetRTCUNIX")
+    // {
+    //     PMMSetRTCUNIXTime(GetUnixDateTimeNow());
+    // }
+    // else if (readData == "CheckHardware")
+    // {
+    //     CheckAvailabeHardware();
+    // }
 
     return result;
 }
