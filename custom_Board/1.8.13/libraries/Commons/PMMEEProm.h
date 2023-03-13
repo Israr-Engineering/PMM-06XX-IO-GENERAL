@@ -25,7 +25,7 @@ void EEpromSetup()
 int16_t GetIntDataFromEEprom(int16_t Address)
 {
     int16_t  Value;
-    return PMMEprom.get(Address, Value);
+    PMMEprom.get(Address, Value);
     return Value;
 }
 
@@ -36,8 +36,8 @@ void PutIntDataToEEprom(int16_t Address, int16_t Value)
 
 int32_t GetLongDataFromEEprom(int16_t Address)
 {
-    String Value;
-    return PMMEprom.get(Address, Value);
+    int32_t Value;
+   PMMEprom.get(Address, Value);
     return Value;
 }
 
@@ -49,7 +49,7 @@ void PutLongDataToEEprom(int16_t Address, int32_t Value)
 String GetStringDataFromEEprom(int16_t Address)
 {
     String  Value;
-    return PMMEprom.get(Address, Value);
+     PMMEprom.get(Address, Value);
     return Value;
 }
 
@@ -61,7 +61,7 @@ void PutStringDataToEEprom(int16_t Address, String Value)
 float GetFloatDataFromEEprom(int16_t Address)
 {
     float  Value;
-    return PMMEprom.get(Address, Value);
+     PMMEprom.get(Address, Value);
     return Value;
 }
 
