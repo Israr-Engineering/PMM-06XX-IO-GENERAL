@@ -11,12 +11,12 @@
         { 
           "name": "PMM-06XX-IO-GENERAL", 
           "architecture": "samd",
-          "version": "0.1.9",
+          "version": "0.2.0",
           "category": "Contributed",
           "url": "https://github.com/Israr-Engineering/PMM-06XX-IO-GENERAL/blob/main/custom_Board/PMM.zip?raw=true",
           "archiveFileName": "PMM.zip",
-          "checksum": "SHA-256:7237CFF66418E5A4D770961EBE31D45094B827F77820D64F1D1580E6884AD3EA",
-          "size": "8730037",
+          "checksum": "SHA-256:9CA8F38881F6A58DE20CE44BEA3DA178434F6B206FC8BDF3EFBBEA894A53528F",
+          "size": "8730079",
           "boards": [
 
             {"name": "PMM0606"},

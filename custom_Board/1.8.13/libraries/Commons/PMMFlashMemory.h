@@ -6,6 +6,8 @@
 const int WRITTEN_SIGNATURE = 0xBEEFDEED;
 const int START_ADDRESS     = 0;
 
+SFE_SPI_FLASH FlashEPROM;
+
 extern void PMMFlashWriteInt (int Address, int Value);
 extern void PMMFlashWriteFloat (int Address, float Value);
 extern void PMMFlashWriteLong (int Address, long Value);
@@ -15,43 +17,47 @@ extern float PMMFlashReadFloat(int Address, float Value);
 extern long PMMFlashReadFloat(int Address, long Value);
 extern String PMMFlashReadFloat(int Address, String Value);
 
-void PMMFlashWriteInt (int Address, int Value)
+void PMMInitializeFlashEPROM(byte PIN_FLASH_CS){
+    FlashEPROM.begin(PIN_FLASH_CS);
+}
+
+void PMMFlashWriteInt(int Address, int Value)
 {
-    EEPROM.put(Address, Value);
+    FlashEPROM.put(Address, Value);
 }
 
 void PMMFlashWriteFloat (int Address, float Value)
 {
-    EEPROM.put(Address, Value);
+    FlashEPROM.put(Address, Value);
 }
 
 void PMMFlashWriteLong (int Address, long Value)
 {
-    EEPROM.put(Address, Value);
+    FlashEPROM.put(Address, Value);
 }
 
 void PMMFlashWriteString (int Address, String Value)
 {
-    EEPROM.put(Address, Value);
+    FlashEPROM.put(Address, Value);
 }
 
 int PMMFlashReadInt(int Address, int Value)
 {
-    EEPROM.get(Address, Value);
+    FlashEPROM.get(Address, Value);
 }
 
 float PMMFlashReadFloat(int Address, float Value)
 {
-    EEPROM.get(Address, Value);
+    FlashEPROM.get(Address, Value);
 }
 
 long PMMFlashReadFloat(int Address, long Value)
 {
-    EEPROM.get(Address, Value);
+    FlashEPROM.get(Address, Value);
 }
 
 String PMMFlashReadFloat(int Address, String Value)
 {
-    EEPROM.get(Address, Value);
+    FlashEPROM.get(Address, Value);
 }
 #endif

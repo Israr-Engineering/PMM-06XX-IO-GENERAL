@@ -11,9 +11,6 @@ struct PmmModBus PMMMODBUS;
 struct PmmTCPUDP PMMTCPUDP;
 struct PmmSerial PMMSERIAL;
 
-
-EthernetServer server(80);
-
 extern void PMMSetUSBConfigurationSettings();
 extern void PMMSetDeviceSettingsEProm();
 extern void PMMGetDeviceSettingsEProm();
