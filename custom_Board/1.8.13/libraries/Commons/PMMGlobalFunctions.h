@@ -370,12 +370,12 @@ void Debugprint(string toPrint)
 
 #pragma region HTTP FUNCTIONS
 
-void InitializeEthernet(byte mac[],IPAddress ip)
-{
-    Ethernet.init(10);
-    Ethernet.begin(mac, ip);
-    server.begin();
-}
+// void InitializeEthernet(byte mac[],IPAddress ip)
+// {
+//     Ethernet.init(10);
+//     Ethernet.begin(mac, ip);
+//     server.begin();
+// }
 
 IPAddress PMMGetLocalIP()
 {
