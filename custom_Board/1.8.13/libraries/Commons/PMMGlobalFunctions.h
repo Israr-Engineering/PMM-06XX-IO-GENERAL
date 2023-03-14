@@ -35,7 +35,7 @@ extern string PMMPostJSONRequest(string url, string JSONDATA);
 extern void InitializeEthernet();
 extern IPAddress PMMGetLocalIP();
 extern void PMMInitializeEEPROM();
-extern void EEPROMLength();
+extern unsigned int EEPROMLength();
 extern void InitializeWire();
 
 
