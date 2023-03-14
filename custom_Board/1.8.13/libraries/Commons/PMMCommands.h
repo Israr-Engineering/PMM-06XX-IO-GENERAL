@@ -36,8 +36,19 @@ string PMMCommnads(string readData)
     string result = "";
     if (readData == "PMMSetUSBConfigurationSettings")
     {
-        PMMSetUSBConfigurationSettings();
-        result = "PMMSetUSBConfigurationSettings";
+        if (SerialUSB.available() > 0)
+        {
+            string settings = PMMReturnDataFromSerialUSB();
+            PMMSetUSBConfigurationSettings(settings);
+            result = "PMMSetUSBConfigurationSettings";
+        }
+
+        if (client)
+        {
+            string settings = PMMReturnDataFromAPIHTTPHeader();     
+            PMMSetUSBConfigurationSettings(settings);
+            result = "PMMSetUSBConfigurationSettings";
+        }
     }
     else if (readData == "PMMGetUSBConfigurationSettings")
     {
@@ -47,6 +58,7 @@ string PMMCommnads(string readData)
     {
         result = PMMIsAlive();
     }
+
     // else if (readData == "RTC")
     // {
     //     DateTime RTCNow = PMMGetRTCNOW();
@@ -107,20 +119,20 @@ string PMMReturnDataFromAPIHTTPHeader()
 }
 
 void PMMSendDataHTTPClient(String Data)
-  {
+{
     EthernetClient client = server.available();
-          client.println("HTTP/1.1 200 OK");
-          client.println("Content-Type: text/html");
-          client.println("Connection: close");
-          // client.println("Refresh: 5");
-          client.println();
-           client.println("<!DOCTYPE HTML>");
-          client.println("<html>");
-          client.println("<head>");
-          client.print(Data);
-          client.println("</head>");
-          client.println("</html>");
-client.stop();
-  }
+    client.println("HTTP/1.1 200 OK");
+    client.println("Content-Type: text/html");
+    client.println("Connection: close");
+    // client.println("Refresh: 5");
+    client.println();
+    client.println("<!DOCTYPE HTML>");
+    client.println("<html>");
+    client.println("<head>");
+    client.print(Data);
+    client.println("</head>");
+    client.println("</html>");
+    client.stop();
+}
 
 #endif

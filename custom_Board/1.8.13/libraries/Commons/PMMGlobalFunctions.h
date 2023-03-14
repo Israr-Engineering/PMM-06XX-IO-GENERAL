@@ -11,10 +11,12 @@ struct PmmModBus PMMMODBUS;
 struct PmmTCPUDP PMMTCPUDP;
 struct PmmSerial PMMSERIAL;
 
-extern void PMMSetUSBConfigurationSettings();
+extern void PMMSetUSBConfigurationSettings(string Settings);
+extern string PMMGetUSBConfigurationSettings();
+
 extern void PMMSetDeviceSettingsEProm();
 extern void PMMGetDeviceSettingsEProm();
-extern string PMMGetUSBConfigurationSettings();
+
 extern string PMMIsAlive();
 extern std::array<string, 100> PMMSplitString(string parameter, std::array<string, 100> OutputArray);
 extern void PMMSplitString2(string parameter, string &returnVal, string &returnstring);
@@ -49,13 +51,13 @@ void PMMInitializeEEPROM()
 }
 
 // 0620,0,1,192.168.1.200,255.255.255.0,8.8.8.0,192.168.1.1,192.168.1.201,1000,5,00-B0-D0-63-C2-26,91,92,93,94,COM1,9600,8,1,None,true,1000,5,18101995,1,1,false\n
-void PMMSetUSBConfigurationSettings()
+void PMMSetUSBConfigurationSettings(string Settings)
 {
-    if (SerialUSB.available() > 0)
-    {
-        String SerialData = SerialUSB.readStringUntil('\n');
+    // if (SerialUSB.available() > 0)
+    // {
+    //     String SerialData = SerialUSB.readStringUntil('\n');
         //String SerialData = "0620,0,1,192.168.1.200,255.255.255.0,8.8.8.0,192.168.1.1,192.168.1.201,1000,5,00-B0-D0-63-C2-26,91,92,93,94,COM1,9600,8,1,None,true,1000,5,18101995,1,1,false\n";
-        string Settings = std::string(SerialData.c_str());
+        //string Settings = settings;
         std::array<string, 100> OUTPUT;
         OUTPUT = PMMSplitString(Settings, OUTPUT);
 
@@ -98,7 +100,7 @@ void PMMSetUSBConfigurationSettings()
         PMMPLC.WebServer = WebServer;
 
         PMMSetDeviceSettingsEProm();
-    }
+    //}
 }
 
 string PMMGetUSBConfigurationSettings()
@@ -137,9 +139,9 @@ string PMMGetUSBConfigurationSettings()
     return DeviceSettings;
 }
 
-void EEPROMLength()
+unsigned int EEPROMLength()
 {
-    SerialUSB.println(PMMEprom.length());
+    return PMMEprom.length();
 }
 
 string PMMIsAlive()
@@ -151,7 +153,6 @@ void PMMSetDeviceSettingsEProm()
 {
     if (PMMEprom.begin() == true)
     {
-        SerialUSB.println((PMMPLC.Name).c_str());
         PMMEprom.put(0, PMMPLC.Name);
         PMMEprom.put(4, PMMPLC.TCPorRTU);
         PMMEprom.put(8, PMMMODBUS.SlaveID);
