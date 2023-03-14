@@ -2,7 +2,6 @@
 #include <ProjectDef.h>
 #include <PMMEEProm.h>
 
-
 long PMMTime;
 int16_t EpromValue1 = 0;
 int32_t EpromValue2 = 0;
@@ -15,27 +14,29 @@ void setup() {
   SerialUSB.begin(9600);
 
   PutIntDataToEEprom(1, 100);        //Edit value for address 0 in eeprom to 100
-  PutIntDataToEEprom(2, 100000);     //Edit value for address 2 in eeprom to 100000
-  PutIntDataToEEprom(4, "PMM LLC");  //Edit value for address 4 in eeprom to PMM LLC
-  PutIntDataToEEprom(6, 100.5);      //Edit value for address 6 in eeprom to 100.5
+  PutLongDataToEEprom(2, 100000);     //Edit value for address 2 in eeprom to 100000
+  PutStringDataToEEprom(4, "PMM LLC");  //Edit value for address 4 in eeprom to PMM LLC
+  PutFloatDataToEEprom(6, 100.5);      //Edit value for address 6 in eeprom to 100.5
 
   Scheduler.startLoop(PMMConfiguration);  //Start scheduler for configuration loop
   Scheduler.startLoop(PMMCommunication);  //Start scheduler for communication loop
 }
 
 void loop() {
-  EpromValue1 = GetIntDataFromEEprom(1);     // Function to read int16_t value from address 1 in eeprom EEPROM
-  EpromValue2 = GetLongDataFromEEprom(2);    // Function to read int32_t value from address 2 in eeprom EEPROM
-  EpromValue3 = GetStringDataFromEEprom(4);  // Function to read String value from address 4 in eeprom EEPROM
-  EpromValue4 = GetFloatDataFromEEprom(6);   // Function to read float value from address 6 in eeprom EEPROM
 
-  if ((milles() - PMMTime) > 15000) {
-    SerialUSB.println(EpromValue1);  //Print to serial 100
-    SerialUSB.println(EpromValue2);  //Print to serial 100000
-    SerialUSB.println(EpromValue3);  //Print to serial PMM LLC
-    SerialUSB.println(EpromValue4);  //Print to serial 100.5
+  if ((millis() - PMMTime) > 15000) {
 
-    PMMTime = milles();
+    EpromValue1 = PMMFlashReadInt(1);     // Function to read int16_t value from address 1 in eeprom EEPROM
+    EpromValue2 = GetLongDataFromEEprom(2);    // Function to read int32_t value from address 2 in eeprom EEPROM
+    EpromValue3 = GetStringDataFromEEprom(4);  // Function to read String value from address 4 in eeprom EEPROM
+    EpromValue4 = GetFloatDataFromEEprom(6);   // Function to read float value from address 6 in eeprom EEPROM
+    
+    SerialUSB.println(EpromValue1);            //Print to serial 100
+    SerialUSB.println(EpromValue2);            //Print to serial 100000
+    SerialUSB.println(EpromValue3);            //Print to serial PMM LLC
+    SerialUSB.println(EpromValue4);            //Print to serial 100.5
+
+    PMMTime = millis();
   }
 }
 
