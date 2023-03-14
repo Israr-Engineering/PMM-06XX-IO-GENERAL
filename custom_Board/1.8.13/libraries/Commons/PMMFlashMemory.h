@@ -14,8 +14,8 @@ extern void PMMFlashWriteLong (int Address, long Value);
 extern void FlashWriteString (int Address, String Value);
 extern int PMMFlashReadInt(int Address, int Value);
 extern float PMMFlashReadFloat(int Address, float Value);
-extern long PMMFlashReadFloat(int Address, long Value);
-extern String PMMFlashReadFloat(int Address, String Value);
+extern long PMMFlashReadLong(int Address, long Value);
+extern String PMMFlashReadString(int Address, String Value);
 
 void PMMInitializeFlashEPROM(byte PIN_FLASH_CS){
     FlashEPROM.begin(PIN_FLASH_CS);
@@ -51,12 +51,12 @@ float PMMFlashReadFloat(int Address, float Value)
     FlashEPROM.get(Address, Value);
 }
 
-long PMMFlashReadFloat(int Address, long Value)
+long PMMFlashReadLong(int Address, long Value)
 {
     FlashEPROM.get(Address, Value);
 }
 
-String PMMFlashReadFloat(int Address, String Value)
+String PMMFlashReadString(int Address, String Value)
 {
     FlashEPROM.get(Address, Value);
 }
