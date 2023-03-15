@@ -30,6 +30,7 @@
 #include <MPU6050_6Axis_MotionApps612.h>
 #include <Adafruit_BNO055.h>
 #include <utility/imumaths.h>
+#include <FlashStorage_SAMD.h>
 
 // 02. Using
 using namespace std;

@@ -11,8 +11,7 @@ float EpromValue4 = 0.0;
 void setup() {
 
   SerialUSB.begin(9600);
-  PMMInitializeFlashEPROM();  //Initialize Flash with pin
-
+  
   PMMFlashWriteInt(1, 100);           //Edit value for address 0 in flash to 100
   PMMFlashWriteLong(2, 100000);       //Edit value for address 2 in flash to 100000
   PMMFlashWriteString(4, "PMM LLC");  //Edit value for address 4 in flash to PMM LLC
